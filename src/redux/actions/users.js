@@ -10,16 +10,16 @@ export const addUser = (payload) => ({ type: ADD_NEW_USER, payload });
 export const deleteUser = (payload) => ({ type: DELETE_USER, payload });
 
 export const fetchUsers = () => (dispatch) => {
-  axios.get('http://localhost:3001/users').then(({ data }) => {
+  axios.get(baseURL).then(({ data }) => {
     dispatch(setUsers(data));
   }).catch((err) => console.error('Fetch users is failed', err));
 }
 
 export const addNewUser = (formData) => () => {
-  axios.post('http://localhost:3001/users', formData);
+  axios.post(baseURL, formData);
 }
 
 export const removeUser = (userId) => () => {
   // console.log(userId)
-  axios.delete(`http://localhost:3001/users/${userId}`)
+  axios.delete(`${baseURL}/${userId}`)
 }
