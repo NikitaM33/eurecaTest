@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+import { SET_USERS, SET_MODAL, ADD_NEW_USER } from '../../constants/main';
+
+export const setUsers = (payload) => ({ type: SET_USERS, payload });
+export const setModal = (payload) => ({ type: SET_MODAL, payload });
+export const addUser = (payload) => ({ type: ADD_NEW_USER, payload });
+
+export const fetchUsers = () => (dispatch) => {
+  axios.get('http://localhost:3001/users').then(({ data }) => {
+    dispatch(setUsers(data));
+  }).catch((err) => console.error('Fetch users is failed', err));
+}
+
+export const addNewUser = (formData) => () => {
+  axios.post('http://localhost:3001/users', formData);
+}

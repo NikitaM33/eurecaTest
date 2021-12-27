@@ -1,0 +1,26 @@
+.newUser {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    span,
+    button {
+        color: $white;
+        margin-right: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.3rem;
+        background: $blue;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: ease 0.3s;
+
+        &:hover {
+            // transform: scale(1.1);
+            @include buttonScale(scale(1.1))
+        }
+    }
+}

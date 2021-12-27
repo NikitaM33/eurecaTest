@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "surname": "Иванов",
+      "name": "Иван",
+      "lastName": "Иванович",
+      "mail": "mail1@mail.com",
+      "login": "user1",
+      "timeStamp": "1640596292475"
+    },
+    {
+      "id": "2",
+      "surname": "Петров",
+      "name": "Петр",
+      "lastName": "Сергеевич",
+      "mail": "mail2@mail.com",
+      "login": "user2",
+      "timeStamp": "1640596323472"
+    },
+    {
+      "id": "3",
+      "surname": "Сергеев",
+      "name": "Григорий",
+      "lastName": "Викторович",
+      "mail": "mail3@mail.com",
+      "login": "user3",
+      "timeStamp": "1640596334931"
+    },
+    {
+      "id": "4",
+      "surname": "Федоров",
+      "name": "Виктор",
+      "lastName": "Федорович",
+      "mail": "mail4@mail.com",
+      "login": "user4",
+      "timeStamp": "1640596343366"
+    },
+    {
+      "id": "5",
+      "surname": "Хвастунов",
+      "name": "Сергей",
+      "lastName": "Петрович",
+      "mail": "mail5@mail.com",
+      "login": "user5",
+      "timeStamp": "1640596352841"
+    },
+    {
+      "id": "6",
+      "surname": "Григорьев",
+      "name": "Федор",
+      "lastName": "Григорьевич",
+      "mail": "mail6@mail.com",
+      "login": "user6",
+      "timeStamp": "1640596360890"
+    },
+    {
+      "surname": "dd",
+      "name": "aasd",
+      "lastName": "dd",
+      "mail": "asd@asd.com",
+      "login": "asd",
+      "timeStamp": 1640596608781,
+      "id": "0NnOpeb"
+    }
+  ]
+}

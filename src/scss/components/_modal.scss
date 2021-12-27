@@ -1,0 +1,108 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    &__content {
+        width: 38rem;
+        min-width: 35rem;
+        background: #fff;
+        border-radius: 0.6rem;
+        overflow: hidden;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
+        background: $darkBlue;
+        height: 3.5rem;
+    }
+
+    &__text {
+        flex: 0 0 98%;
+        text-align: center;
+        color: $white;
+    }
+    
+    &__close {
+        text-align: right;
+        width: fit-content;
+        color: darken($white, 40%);
+        cursor: pointer;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: $_14;
+            color: $blueGrey;
+        }
+
+        input {
+            height: 2.25rem;
+            margin-bottom: 1.75rem;
+            padding: 0 0.7rem;
+            border: 2px solid $isItGrey;
+            background: $input;
+            border-radius: 0.4rem;
+
+            &::placeholder {
+                color: $placeholder;
+            }
+        }
+    }
+}
+
+.form {
+    padding: 2.25rem 4rem;
+
+    &__error {
+        color: $error;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3.75rem;
+    padding: 0 1.5rem;
+    background: $input;
+
+    &__button {
+        width: 9.5rem;
+        height: 2.25rem;
+        background: lighten($blue, 20%);
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        color: darken($white, 12%);
+        // cursor: not-allowed;
+    }
+
+    .active {
+        width: 9.5rem;
+        height: 2.25rem;
+        background: $blue;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        color: $white;
+        cursor: pointer;
+        transition: ease 0.3s;
+
+        &:hover {
+            @include buttonScale(scale(1.1))
+        }
+    }
+}
