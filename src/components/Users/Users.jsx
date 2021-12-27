@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchUsers } from '../../redux/actions/users';
+import { fetchUsers, removeUser } from '../../redux/actions/users';
 import pen from '../../assets/img/Pencil.svg';
 import trash from '../../assets/img/Trash.svg';
 import Modal from '../common/Modal/Modal';
 
-function Users({ users }) {
+function Users() {
   const dispatch = useDispatch();
   const { items } = useSelector(({ users }) => users);
   const { isModalOpen } = useSelector(({ users }) => users);
+
+  const deleteUser = (id) => {
+    dispatch(removeUser(id));
+  }
 
   useEffect(() => {
     dispatch(fetchUsers())
@@ -31,7 +35,7 @@ function Users({ users }) {
 
         <tbody>
           {
-            items && items.sort((a, b) => a.timeStamp - b.timeStamp).reverse().map((user) => {
+            items && items.map((user) => {
               return <tr key={user.id} className="users__string">
                 <td>{user.surname}</td>
                 <td>{user.name}</td>
@@ -39,12 +43,12 @@ function Users({ users }) {
                 <td>{user.mail}</td>
                 <td>{user.login}</td>
                 <td className="users__editContainer">
-                  <div className="users__edit">
+                  <button className="users__edit">
                     <img src={pen} alt="Edit" />
-                  </div>
-                  <div className="users__remove">
+                  </button>
+                  <button className="users__remove" onClick={() => deleteUser(user.id)}>
                     <img src={trash} alt="Remove" />
-                  </div>
+                  </button>
                 </td>
               </tr>
             })

@@ -8,10 +8,11 @@ const initialState = {
 const users = (state = initialState, action) => {
   switch (action.type) {
     case SET_USERS:
-
       return {
         ...state,
-        items: action.payload
+        items: action.payload.sort((a, b) => {
+          return a.timestamp - b.timestamp
+        }).reverse()
       }
 
     case SET_MODAL:

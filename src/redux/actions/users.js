@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-import { SET_USERS, SET_MODAL, ADD_NEW_USER } from '../../constants/main';
+import { SET_USERS, SET_MODAL, ADD_NEW_USER, DELETE_USER } from '../../constants/main';
 
 export const setUsers = (payload) => ({ type: SET_USERS, payload });
 export const setModal = (payload) => ({ type: SET_MODAL, payload });
 export const addUser = (payload) => ({ type: ADD_NEW_USER, payload });
+export const deleteUser = (payload) => ({ type: DELETE_USER, payload });
 
 export const fetchUsers = () => (dispatch) => {
   axios.get('http://localhost:3001/users').then(({ data }) => {
@@ -14,4 +15,9 @@ export const fetchUsers = () => (dispatch) => {
 
 export const addNewUser = (formData) => () => {
   axios.post('http://localhost:3001/users', formData);
+}
+
+export const removeUser = (userId) => () => {
+  // console.log(userId)
+  axios.delete(`http://localhost:3001/users/${userId}`)
 }
