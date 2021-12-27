@@ -22,7 +22,7 @@ function Modal({ isModal }) {
             </div>
 
             <div className="modal__body">
-              <Form />
+              <Form onClose={closeModal} />
             </div>
           </div>
         </div>

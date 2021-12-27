@@ -17,7 +17,7 @@ function Users() {
 
   useEffect(() => {
     dispatch(fetchUsers())
-  }, []);
+  }, [items]);
 
   return (
     <>

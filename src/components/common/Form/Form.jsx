@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { addNewUser } from '../../../redux/actions/users';
 
-function Form() {
+function Form({ onClose }) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
@@ -126,6 +126,7 @@ function Form() {
     }
 
     dispatch(addNewUser(formData));
+    onClose();
   }
 
   return (
@@ -161,7 +162,6 @@ function Form() {
             'active': surname && name && patronymic && email && login
           })} disabled onClick={sendFormData}>Создать</button>
         }
-
       </div>
     </>
   )

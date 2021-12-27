@@ -44,15 +44,6 @@
       "mail": "mail5@mail.com",
       "login": "user5",
       "timeStamp": "1640596352841"
-    },
-    {
-      "surname": "test",
-      "name": "test",
-      "lastName": "test",
-      "mail": "asd@asd.com",
-      "login": "123",
-      "timeStamp": 1640615488192,
-      "id": "dOBd7xg"
     }
   ]
 }
