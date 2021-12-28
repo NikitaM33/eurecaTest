@@ -12,7 +12,9 @@ function Users() {
   const { isModalOpen } = useSelector(({ users }) => users);
 
   const deleteUser = (id) => {
-    dispatch(removeUser(id));
+    if (window.confirm('Удалить выбранного пользователя?')) {
+      dispatch(removeUser(id));
+    }
   }
 
   useEffect(() => {
